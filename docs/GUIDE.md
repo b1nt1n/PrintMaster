@@ -28,7 +28,7 @@ Choose **Проект → Создать Markdown…**, import a `.md` file or u
 Inline mathematics: $a^2+b^2=c^2$.
 
 $$
-\int x^n\,dx=\frac{x^{n+1}}{n+1}+C
+\int x^n\,dx=\frac{x^{n+1}}{n+1}+C,\quad n\ne -1
 $$
 
 - [x] Prepared
@@ -45,7 +45,7 @@ Supported matrices include `matrix`, `pmatrix`, `bmatrix`, `Bmatrix`, `vmatrix` 
 
 A formula error shows its source line and blocks applying the invalid document. Correct the source or save it as `.md`; cancelling leaves previously applied pages available. PrintMaster formats supplied solutions and does not perform algebra or solve exercises.
 
-If an older project requests a Markdown update, reopen the editor, review all source and apply it. Old pagination is not silently reused. [Complete limits](LIMITATIONS.md).
+If an older project requests a Markdown update, reopen the editor, review the source and apply it. [Complete limits](LIMITATIONS.md).
 
 ## Notebook paper
 
@@ -53,7 +53,7 @@ Choose **Тетрадный лист**, then grid/ruled and single/spread. Start
 
 Notebook guides are screen-only. Text can continue from the left half of a spread to the right. Overflow is shown; it does not silently create another spread. Printing only the part that fits requires confirmation.
 
-For the P1102, the spread is fed with the 208 mm edge first. Follow the application's paper-loading diagram and centre the guides. Use flat, loose paper within the printer's supported media limits. The app cannot verify how paper was physically loaded.
+For the P1102, feed the spread with the 208 mm edge first. Follow the application's paper-loading diagram and centre the paper between the guides. Use flat, loose paper within the printer's supported media limits. The app cannot verify how paper was physically loaded.
 
 ## Review and print
 

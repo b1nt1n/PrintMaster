@@ -5,7 +5,7 @@ Validates a prepared public tree and every decompressed ZIP entry without launch
 the application, extracting untrusted paths, or using the printer.
 #>
 [CmdletBinding()]
-param([string]$PublishDirectory='publish', [ValidatePattern('^\d+\.\d+\.\d+$')][string]$Version='1.0.35')
+param([string]$PublishDirectory='publish', [ValidatePattern('^\d+\.\d+\.\d+$')][string]$Version)
 Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop'
 $projectRoot=[IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot))
@@ -14,6 +14,19 @@ if((Split-Path -Parent $publishRoot) -ne $projectRoot -or (Split-Path -Leaf $pub
     throw 'PublishDirectory must be a direct workspace child named publish or publish-SUFFIX.'
 }
 $repo=Join-Path $publishRoot 'repository';$assets=Join-Path $publishRoot 'release-assets'
+if(-not $PSBoundParameters.ContainsKey('Version')){
+    # Read the prepared release, not this checkout: older releases remain verifiable.
+    $versionProject=Join-Path $repo 'src/PrintMaster/PrintMaster.csproj'
+    if(-not(Test-Path -LiteralPath $versionProject -PathType Leaf)){
+        throw "Cannot infer the release version: prepared project file is missing: $versionProject. Specify -Version explicitly."
+    }
+    [xml]$projectXml=Get-Content -LiteralPath $versionProject -Raw
+    $versions=@($projectXml.SelectNodes('/Project/PropertyGroup/Version')|ForEach-Object{$_.InnerText.Trim()}|Sort-Object -Unique)
+    if($versions.Count -ne 1 -or $versions[0] -notmatch '^\d+\.\d+\.\d+$'){
+        throw "Cannot infer one numeric major.minor.patch version from $versionProject. Specify -Version explicitly."
+    }
+    $Version=$versions[0]
+}
 $archive=Join-Path $assets "PrintMaster-$Version-win-x64.zip"
 $manifestPath=Join-Path $assets "PrintMaster-$Version-win-x64.manifest.json"
 $problems=[Collections.Generic.List[string]]::new();$warnings=[Collections.Generic.List[string]]::new()

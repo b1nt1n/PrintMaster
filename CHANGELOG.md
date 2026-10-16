@@ -7,8 +7,8 @@
 - Use consistent Lucide icons and labels in workspace commands, dialogs and context menus. Match foreground, disabled and selected states; wrap long captions in narrow controls.
 - Apply the shared window style explicitly so dialogs use the PrintMaster title-bar icon and consistent base typography.
 - Correct Russian quantity forms for pages, impressions and sheets in queue, print, export and paper-loading summaries.
-- Keep page order and unique identities when committing text flow during page moves. Preserve the right-clicked page group after the commit, and respect shortcut focus outside the workspace.
-- Clone notebook pages with independent editable stories. Copy individual notebook fragments as standalone text; cut only selected source ranges while retaining unselected columns and hidden overflow.
+- Fixed page moves and right-click group selection after editing text with continuation. Pages keep their order and unique IDs; shortcuts respect focus outside the workspace.
+- Text in duplicated notebook pages can be edited independently of the original. Copied fragments become standalone text; cutting removes only the selected text and preserves other columns and hidden overflow.
 - Guard the 1–999 copy-count boundaries. Correct the text-paste limit for replacement selections and make single-point brush strokes selectable and erasable.
 - Apply EXIF rotation/mirroring to new camera-image imports before creating crop coordinates. Originals and existing project materials remain unchanged; normalized working copies use PNG with the correct physical resolution.
 - Discard failed/cancelled import transactions, clear missing LibreOffice paths without losing other preferences, and prevent diagnostic-log failures from replacing the original application error.
@@ -19,8 +19,8 @@
 - Добавлены единые значки Lucide и подписи команд в рабочем окне, диалогах и меню ПКМ. Согласованы цвета и состояния кнопок; длинные подписи переносятся в узких элементах.
 - Общий стиль окон применяется явно: диалоги используют иконку PrintMaster в заголовке и согласованные базовые параметры шрифта.
 - Исправлены русские формы количества страниц, оттисков и листов в очереди, печати, экспорте и подсказках загрузки бумаги.
-- Сохранены порядок страниц и уникальные ID при завершении текста с продолжением во время перестановки. ПКМ сохраняет выбранную группу после фиксации текста, а горячие клавиши учитывают фокус вне рабочей области.
-- Тетрадные страницы дублируются с независимой редактируемой историей. Отдельные фрагменты копируются как самостоятельный текст; вырезание удаляет только выбранные диапазоны, сохраняя другую колонку и невидимое переполнение.
+- Исправлены перестановка страниц и сохранение выбранной группы через ПКМ после редактирования текста с продолжением. Страницы сохраняют порядок и уникальные ID; горячие клавиши учитывают фокус вне рабочей области.
+- Текст в дубликате тетрадного листа редактируется независимо от оригинала. Отдельные фрагменты копируются как самостоятельный текст; вырезание удаляет только выделенный текст, сохраняя другие колонки и невидимое переполнение.
 - Защищены границы количества копий 1–999. Исправлены лимит вставки поверх выделения и выбор/удаление одиночной точки кисти.
 - Поворот и отражение EXIF применяются при новом импорте фото до создания координат кропа. Оригиналы и материалы старых проектов не меняются; рабочая копия сохраняется в PNG с корректным физическим разрешением.
 - Незавершённый импорт очищает собственные временные файлы. Отсутствующий LibreOffice больше не мешает сохранить другие настройки; ошибка журнала не подменяет исходную ошибку приложения.

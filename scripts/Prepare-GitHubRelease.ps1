@@ -4,11 +4,12 @@
 Stages a public source tree and a portable ZIP locally. Does not build, publish,
 create a Git repository, upload, print, or change the installed application's state.
 .EXAMPLE
-pwsh ./scripts/Prepare-GitHubRelease.ps1 -Version 1.0.35
+pwsh ./scripts/Prepare-GitHubRelease.ps1
+# Uses the version declared in src/PrintMaster/PrintMaster.csproj.
 #>
 [CmdletBinding()]
 param(
-    [ValidatePattern('^\d+\.\d+\.\d+$')][string]$Version = '1.0.35',
+    [ValidatePattern('^\d+\.\d+\.\d+$')][string]$Version,
     [string]$ApplicationDirectory,
     [string]$ContentDirectory,
     [string]$OutputDirectory = 'publish'
@@ -16,6 +17,18 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $projectRoot = [IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot))
+if (-not $PSBoundParameters.ContainsKey('Version')) {
+    $versionProject = Join-Path $projectRoot 'src/PrintMaster/PrintMaster.csproj'
+    if (-not (Test-Path -LiteralPath $versionProject -PathType Leaf)) {
+        throw "Cannot infer the release version: project file is missing: $versionProject. Specify -Version explicitly."
+    }
+    [xml]$projectXml = Get-Content -LiteralPath $versionProject -Raw
+    $versions = @($projectXml.SelectNodes('/Project/PropertyGroup/Version') | ForEach-Object { $_.InnerText.Trim() } | Sort-Object -Unique)
+    if ($versions.Count -ne 1 -or $versions[0] -notmatch '^\d+\.\d+\.\d+$') {
+        throw "Cannot infer one numeric major.minor.patch version from $versionProject. Specify -Version explicitly."
+    }
+    $Version = $versions[0]
+}
 function Resolve-ProjectPath([string]$Path) {
     if ([IO.Path]::IsPathRooted($Path)) { return [IO.Path]::GetFullPath($Path) }
     return [IO.Path]::GetFullPath((Join-Path $projectRoot $Path))

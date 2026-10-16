@@ -50,3 +50,7 @@ Copy the complete output directory when testing on another machine. PDFium is a 
 `Prepare-GitHubRelease.ps1` and `Verify-GitHubRelease.ps1` are optional maintainer tools. They do not create or upload a GitHub repository. Preparation needs a separately curated `publish-content/repository` and `publish-content/release-assets` next to the source tree, plus a complete built application folder. This staging input is not required for building the app and is not stored in the public source snapshot. Regular `Publish.ps1` works directly from a clean checkout. Copy the README, images, public docs and release notes into the staging input if preparing a new public package.
 
 Prepare/Verify предназначены для локальной подготовки следующего релиза и требуют отдельно собранную папку `publish-content`. Для обычной сборки они не нужны. Скрипты не создают репозиторий, ничего не загружают и сохраняют уже существующие папки публикаций.
+
+Prepare reads the version from the working project; Verify reads it from the prepared project. Both accept an explicit `-Version`. Run verification before initializing Git in the staged tree.
+
+Prepare берёт версию из рабочего проекта, Verify из подготовленного. В обоих скриптах её можно задать через `-Version`. Проверяй подготовленную папку перед созданием в ней Git-репозитория.
