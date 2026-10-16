@@ -1,0 +1,23 @@
+<UserControl x:Class="PrintMaster.Controls.DrawingStylePanel"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:local="clr-namespace:PrintMaster.Controls">
+ <StackPanel Visibility="{Binding ShowSelectedDrawingProperties,Converter={StaticResource Visible}}" IsEnabled="{Binding CanChangeDrawingStyle}">
+  <TextBlock Text="{Binding DrawingPropertiesTitle}" FontWeight="SemiBold" Margin="0,0,0,6"/>
+  <local:TextColorEditor x:Name="SelectedColorEditor" Color="{Binding SelectedDrawingColor,Mode=TwoWay}" IsMixed="{Binding HasMixedDrawingColor}" CanPickColor="{Binding CanPickProjectColor}" ColorLabel="Цвет выделения"/>
+  <TextBlock Text="{Binding DrawingWidthLabel}" Style="{StaticResource Hint}" Margin="0,10,0,5"/>
+  <local:NumericField x:Name="WidthInput" Text="{Binding SelectedDrawingWidthText,Mode=TwoWay,Converter={StaticResource NumericValue},UpdateSourceTrigger=Explicit,ValidatesOnExceptions=True}"
+   AutomationProperties.Name="Толщина выделенных фигур и штрихов" AutomationProperties.HelpText="Enter — применить, Esc — вернуть. Дробная часть через точку или запятую. Пустое поле у группы означает разные значения." Minimum="{Binding DrawingWidthMinimum}" Maximum="{Binding DrawingWidthMaximum}" Unit="{Binding DrawingWidthUnit}" AllowEmpty="{Binding HasMixedDrawingWidth}" ContextKey="{Binding DrawingContextKey}" RejectionMessage="{Binding DrawingStyleError}"/>
+  <TextBlock Text="Непрозрачность" Style="{StaticResource Hint}" Margin="0,10,0,5"/>
+  <local:NumericField x:Name="OpacityInput" Text="{Binding SelectedDrawingOpacityText,Mode=TwoWay,Converter={StaticResource NumericValue},UpdateSourceTrigger=Explicit,ValidatesOnExceptions=True}"
+   AutomationProperties.Name="Непрозрачность выделенных фигур и штрихов" AutomationProperties.HelpText="От 0 до 100 процентов. Enter — применить, Esc — вернуть. Пустое поле у группы означает разные значения."
+   Minimum="0" Maximum="100" Unit="%" AllowEmpty="{Binding HasMixedDrawingOpacity}" ContextKey="{Binding DrawingContextKey}" RejectionMessage="{Binding DrawingStyleError}"/>
+  <StackPanel Visibility="{Binding ShowSelectedDrawingFillProperties,Converter={StaticResource Visible}}" IsEnabled="{Binding CanChangeDrawingFill}" Margin="0,12,0,0">
+   <CheckBox x:Name="FillToggle" Content="Заливка фигур" IsThreeState="False" IsChecked="{Binding SelectedDrawingHasFill,Mode=TwoWay}" AutomationProperties.Name="Заливка выделенных прямоугольников и эллипсов"
+    ToolTip="Заливка доступна для прямоугольников и эллипсов. Снимите галочку, чтобы оставить только контур."/>
+   <local:TextColorEditor x:Name="SelectedFillColorEditor" Color="{Binding SelectedDrawingFillColor,Mode=TwoWay}" IsMixed="{Binding HasMixedDrawingFillColor}" CanPickColor="{Binding CanPickProjectColor}" ColorLabel="Цвет заливки"
+    Visibility="{Binding HasSelectedDrawingFill,Converter={StaticResource Visible}}" Margin="0,8,0,0"/>
+  </StackPanel>
+  <TextBlock Text="{Binding DrawingSelectionHint}" Style="{StaticResource Hint}" Margin="0,7,0,0" Visibility="{Binding HasDrawingSelectionHint,Converter={StaticResource Visible}}"/>
+  <TextBlock Text="{Binding DrawingStyleError}" TextWrapping="Wrap" Foreground="#AA392C" Margin="0,7,0,0" Visibility="{Binding HasDrawingStyleError,Converter={StaticResource Visible}}"/>
+ </StackPanel>
+</UserControl>

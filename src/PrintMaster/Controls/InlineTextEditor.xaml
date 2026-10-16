@@ -1,0 +1,6 @@
+<UserControl x:Class="PrintMaster.Controls.InlineTextEditor"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <RichTextBox x:Name="Input" BorderThickness="1" BorderBrush="#205D94" Background="White" Padding="0" AcceptsTab="True"
+  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" TextChanged="InputChanged" PreviewKeyDown="InputKeyDown"
+  SpellCheck.IsEnabled="False" AutomationProperties.Name="Текст на листе"/>
+</UserControl>

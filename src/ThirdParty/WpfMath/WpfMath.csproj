@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <OutputType>Library</OutputType>
+    <AssemblyName>WpfMath</AssemblyName>
+    <Version>2.1.0</Version>
+    <InformationalVersion>2.1.0+printmaster.physical-font-provider</InformationalVersion>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>x64</Platforms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="XamlMath.Shared" Version="2.1.0" />
+    <Resource Include="Fonts\*.ttf" />
+    <Content Include="LICENSE.md;NOTICE.md;patch.md;Fonts\LICENSES.md" CopyToOutputDirectory="PreserveNewest" Link="Assets\Licenses\WpfMathFork\%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

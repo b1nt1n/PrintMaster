@@ -1,0 +1,72 @@
+<Window Style="{StaticResource {x:Type Window}}" x:Class="PrintMaster.Views.PrintReviewDialog"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="clr-namespace:PrintMaster.Controls"
+ Title="Печать" Width="860" Height="670" MinWidth="650" MinHeight="470" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+ <Grid Background="{StaticResource Background}"><Grid Margin="20"><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <DockPanel Margin="0,0,0,14"><TextBlock Text="Печать" FontSize="22" FontWeight="SemiBold"/><TextBlock DockPanel.Dock="Right" Text="{Binding Summary}" Margin="16,0,0,0"/></DockPanel>
+  <Grid Grid.Row="1"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="20"/><ColumnDefinition Width="320"/></Grid.ColumnDefinitions>
+   <Grid><Grid.RowDefinitions><RowDefinition/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+    <Border Background="#E9EEF3" Padding="16" CornerRadius="5"><Image Source="{Binding Preview}" Stretch="Uniform" AutomationProperties.Name="Печатный просмотр страницы"/></Border>
+    <DockPanel Grid.Row="1" Margin="0,10,0,0">
+     <Button DockPanel.Dock="Left" Click="Previous" Width="34" Padding="5" AutomationProperties.Name="Предыдущая страница просмотра"><controls:LucideIcon Icon="chevron-left" Width="18" Height="18"/></Button>
+     <Button DockPanel.Dock="Right" Click="Next" Width="34" Padding="5" AutomationProperties.Name="Следующая страница просмотра"><controls:LucideIcon Icon="chevron-right" Width="18" Height="18"/></Button>
+     <TextBlock Text="{Binding PreviewTitle}" TextTrimming="CharacterEllipsis" ToolTip="{Binding PreviewTitle}" HorizontalAlignment="Center"/>
+    </DockPanel>
+   </Grid>
+   <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+    <StackPanel Margin="0,0,12,4">
+     <TextBlock Text="Принтер" FontWeight="SemiBold"/>
+     <DockPanel Margin="0,6,0,0"><Button DockPanel.Dock="Right" Command="{Binding RefreshPrintersCommand}" Width="34" Padding="4" Margin="6,0,0,0" AutomationProperties.Name="Обновить список принтеров"><controls:LucideIcon Icon="refresh-cw" Width="18" Height="18"/></Button><ComboBox ItemsSource="{Binding Printers}" SelectedItem="{Binding Settings.PrinterName}" AutomationProperties.Name="Принтер задания"/></DockPanel>
+     <TextBlock Text="Бумага" Style="{StaticResource Label}"/>
+     <ComboBox ItemsSource="{Binding PaperChoices}" DisplayMemberPath="Label" SelectedValuePath="Value" SelectedValue="{Binding Settings.Paper}" IsEnabled="{Binding CanChangePaper}" AutomationProperties.Name="Бумага задания"/>
+     <TextBlock Text="{Binding PaperHint}" Style="{StaticResource Hint}" Margin="0,6,0,0"/>
+     <StackPanel Visibility="{Binding IsNotebookPaper,Converter={StaticResource Visible}}" IsEnabled="{Binding CanChangePaper}" Margin="0,8,0,0"><TextBlock Text="Вид тетрадного листа" Style="{StaticResource Label}"/><ComboBox ItemsSource="{Binding NotebookChoices}" DisplayMemberPath="Label" SelectedValuePath="Value" SelectedValue="{Binding NotebookVariant}" AutomationProperties.Name="Вид тетрадной бумаги задания"/></StackPanel>
+     <StackPanel Visibility="{Binding IsCustomPaper,Converter={StaticResource Visible}}" IsEnabled="{Binding CanChangePaper}" Margin="0,8,0,0">
+      <TextBlock Text="Ширина подачи × длина, мм" Style="{StaticResource Hint}"/>
+      <Grid Margin="0,4,0,0"><Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="12"/><ColumnDefinition/></Grid.ColumnDefinitions>
+       <controls:NumericField Text="{Binding Settings.CustomWidthMm,Mode=TwoWay,Converter={StaticResource NumericValue},UpdateSourceTrigger=Explicit,ValidatesOnExceptions=True}" AutomationProperties.Name="Ширина бумаги задания" Minimum="{Binding PaperWidthMinimum}" Maximum="{Binding PaperWidthMaximum}" Unit="мм"/>
+       <controls:NumericField Grid.Column="2" Text="{Binding Settings.CustomHeightMm,Mode=TwoWay,Converter={StaticResource NumericValue},UpdateSourceTrigger=Explicit,ValidatesOnExceptions=True}" AutomationProperties.Name="Длина бумаги задания" Minimum="{Binding PaperHeightMinimum}" Maximum="{Binding PaperHeightMaximum}" Unit="мм"/>
+      </Grid>
+     </StackPanel>
+     <TextBlock Text="{Binding PaperLimits}" Style="{StaticResource Hint}" Margin="0,7,0,0"/>
+     <Button Click="ShowPaperGuide" IsEnabled="{Binding CanShowPaperGuide}" Visibility="{Binding IsPhysicalPrinter,Converter={StaticResource Visible}}" Margin="0,8,0,0" AutomationProperties.Name="Схема загрузки бумаги страницы печатного просмотра"><controls:IconLabel Icon="printer" Text="Как загрузить бумагу…"/></Button>
+     <TextBlock Text="Ориентация" Style="{StaticResource Label}"/>
+     <ComboBox ItemsSource="{Binding OrientationChoices}" DisplayMemberPath="Label" SelectedValuePath="Value" SelectedValue="{Binding Settings.Landscape}" IsEnabled="{Binding CanChangePaper}" AutomationProperties.Name="Ориентация задания"/>
+     <CheckBox Content="Двусторонняя печать с ручным переворотом" IsChecked="{Binding Settings.ManualDuplex}" Visibility="{Binding IsPhysicalPrinter,Converter={StaticResource Visible}}" Margin="0,14,0,0"/>
+     <StackPanel Visibility="{Binding ShowDuplexPlan,Converter={StaticResource Visible}}" Margin="0,8,0,0"><TextBlock Text="{Binding DuplexSummary}" Style="{StaticResource Hint}"/><Expander Header="Лицо / оборот каждого листа" Margin="0,6,0,0"><TextBlock Text="{Binding DuplexPairs}" TextWrapping="Wrap" Margin="0,8,0,0"/></Expander></StackPanel>
+     <StackPanel Visibility="{Binding HasAutomaticLayout,Converter={StaticResource Visible}}">
+      <TextBlock Text="Размещение исходных страниц" Style="{StaticResource Label}"/>
+      <ComboBox ItemsSource="{Binding ScaleChoices}" DisplayMemberPath="Label" SelectedValuePath="Value" SelectedValue="{Binding Settings.Scaling}" AutomationProperties.Name="Масштабирование исходных страниц"/>
+      <TextBlock Text="{Binding ScalingHint}" Style="{StaticResource Hint}" Margin="0,5,0,0"/>
+     </StackPanel>
+     <TextBlock Text="Монохром" Style="{StaticResource Label}"/>
+     <ComboBox ItemsSource="{Binding MonoChoices}" DisplayMemberPath="Label" SelectedValuePath="Value" SelectedValue="{Binding Settings.Monochrome}" AutomationProperties.Name="Монохром задания"/>
+     <TextBlock Text="{Binding MonoHint}" Style="{StaticResource Hint}" Margin="0,5,0,0"/>
+     <Expander Header="Дополнительно" Margin="0,14,0,0">
+      <StackPanel>
+       <TextBlock Text="Разрешение, DPI" Style="{StaticResource Label}"/>
+       <ComboBox ItemsSource="{Binding DpiChoices}" SelectedItem="{Binding Settings.Dpi}" AutomationProperties.Name="DPI задания"/>
+       <StackPanel Visibility="{Binding ShowThreshold,Converter={StaticResource Visible}}">
+        <TextBlock Text="Порог черного" Style="{StaticResource Label}"/>
+        <DockPanel><TextBlock DockPanel.Dock="Right" Text="{Binding Settings.Threshold}" Width="32"/><Slider Minimum="0" Maximum="255" IsSnapToTickEnabled="True" TickFrequency="1" Value="{Binding Settings.Threshold}" AutomationProperties.Name="Порог задания"/></DockPanel>
+       </StackPanel>
+       <TextBlock Text="{Binding PrinterMessage}" Style="{StaticResource Hint}" Margin="0,10,0,0"/>
+      </StackPanel>
+     </Expander>
+    </StackPanel>
+   </ScrollViewer>
+  </Grid>
+  <Grid Grid.Row="2" Margin="0,14,0,0"><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+   <ScrollViewer Grid.Row="0" MaxHeight="135" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><StackPanel>
+   <TextBlock Text="{Binding Error}" Foreground="#AA392C" TextWrapping="Wrap" AutomationProperties.Name="Причина невозможности печати"/>
+   <StackPanel><TextBlock Text="{Binding Warning}" Foreground="#8A471C" TextWrapping="Wrap"/>
+    <CheckBox x:Name="AcknowledgeClipping" Content="Разрешить указанную обрезку" Margin="0,6,0,0" Visibility="{Binding AllowCropping,Converter={StaticResource Visible}}"/>
+   </StackPanel>
+   </StackPanel></ScrollViewer>
+   <DockPanel Grid.Row="1" Margin="0,10,0,0">
+    <Button DockPanel.Dock="Right" x:Name="SubmitPrintButton" Click="Submit" IsEnabled="{Binding CanSubmit}" ToolTip="{Binding SubmitAvailability}" Style="{StaticResource PrimaryButton}" MinWidth="115" AutomationProperties.Name="Подтвердить отправку задания"><controls:IconLabel Icon="printer" Text="Печатать"/></Button>
+    <Button DockPanel.Dock="Right" IsCancel="True" MinWidth="100" Margin="0,0,10,0" AutomationProperties.Name="Отмена"><controls:IconLabel Icon="x" Text="Отмена"/></Button>
+    <TextBlock Text="Подготовка просмотра…" Style="{StaticResource Hint}" Visibility="{Binding IsLoading,Converter={StaticResource Visible}}"/>
+   </DockPanel>
+  </Grid>
+ </Grid></Grid>
+</Window>

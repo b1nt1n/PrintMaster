@@ -1,0 +1,56 @@
+<Window Style="{StaticResource {x:Type Window}}" x:Class="PrintMaster.Views.PhotoGridDialog"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:controls="clr-namespace:PrintMaster.Controls"
+ Title="Фото по сетке" Width="900" Height="740" MinWidth="480" MinHeight="440" ShowInTaskbar="False" WindowStartupLocation="CenterOwner">
+ <Grid Margin="20">
+  <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <StackPanel Margin="0,0,0,12">
+   <TextBlock Text="Фото по сетке" FontSize="20" FontWeight="SemiBold"/>
+   <TextBlock Text="{Binding Summary}" Style="{StaticResource Hint}" Margin="0,7,0,0"/>
+  </StackPanel>
+  <StackPanel Grid.Row="1" Margin="0,0,0,12">
+   <WrapPanel>
+    <StackPanel Width="150" Margin="0,0,12,10">
+     <TextBlock Text="Строки × столбцы" Style="{StaticResource Hint}" Margin="0,0,0,5"/>
+     <ComboBox x:Name="GridPreset" ItemsSource="{Binding Presets}" DisplayMemberPath="Label" SelectedValuePath="Value" SelectedValue="{Binding SelectedPreset,Mode=TwoWay}" AutomationProperties.Name="Шаблон сетки"/>
+    </StackPanel>
+    <StackPanel Width="90" Margin="0,0,12,10"><TextBlock Text="Строки" Style="{StaticResource Hint}" Margin="0,0,0,5"/>
+     <controls:NumericField x:Name="RowsInput" Text="{Binding Rows,Mode=TwoWay,Converter={StaticResource NumericValue},UpdateSourceTrigger=Explicit,ValidatesOnExceptions=True}"
+      Minimum="1" Maximum="10" IsInteger="True" AutomationProperties.Name="Количество строк сетки"/>
+    </StackPanel>
+    <StackPanel Width="90" Margin="0,0,12,10"><TextBlock Text="Столбцы" Style="{StaticResource Hint}" Margin="0,0,0,5"/>
+     <controls:NumericField x:Name="ColumnsInput" Text="{Binding Columns,Mode=TwoWay,Converter={StaticResource NumericValue},UpdateSourceTrigger=Explicit,ValidatesOnExceptions=True}"
+      Minimum="1" Maximum="10" IsInteger="True" AutomationProperties.Name="Количество столбцов сетки"/>
+    </StackPanel>
+    <StackPanel Width="125" Margin="0,0,12,10"><TextBlock Text="Между фото" Style="{StaticResource Hint}" Margin="0,0,0,5"/>
+     <controls:NumericField x:Name="GapInput" Text="{Binding GapMm,Mode=TwoWay,Converter={StaticResource NumericValue},UpdateSourceTrigger=Explicit,ValidatesOnExceptions=True}"
+      Minimum="0" Maximum="1000" Unit="мм" AutomationProperties.Name="Промежуток между фото"/>
+    </StackPanel>
+    <StackPanel Width="125" Margin="0,0,0,10"><TextBlock Text="Дополнительное поле" Style="{StaticResource Hint}" Margin="0,0,0,5"/>
+     <controls:NumericField x:Name="InsetInput" Text="{Binding InsetMm,Mode=TwoWay,Converter={StaticResource NumericValue},UpdateSourceTrigger=Explicit,ValidatesOnExceptions=True}"
+      Minimum="0" Maximum="1000" Unit="мм" AutomationProperties.Name="Дополнительный отступ от безопасной области"/>
+    </StackPanel>
+   </WrapPanel>
+   <WrapPanel>
+    <ComboBox x:Name="GridScaling" Width="260" ItemsSource="{Binding ScaleChoices}" DisplayMemberPath="Label" SelectedValuePath="Value" SelectedValue="{Binding Scaling,Mode=TwoWay}" Margin="0,0,16,8" AutomationProperties.Name="Масштабирование фото в ячейках"/>
+    <CheckBox x:Name="RepeatPhoto" Content="Повторить фото во всех ячейках" IsChecked="{Binding Repeat,Mode=TwoWay}" IsEnabled="{Binding CanRepeat}" VerticalAlignment="Center" Margin="0,0,0,8"
+     ToolTip="Доступно, когда выбрано одно фото. Копии используют один исходник." AutomationProperties.Name="Повтор одного фото по сетке"/>
+   </WrapPanel>
+   <TextBlock Text="{Binding FillNotice}" Style="{StaticResource Hint}" Margin="0,3,0,6" Visibility="{Binding ShowFillNotice,Converter={StaticResource Visible}}"/>
+   <TextBlock Text="{Binding RotationNotice}" Style="{StaticResource Hint}"/>
+  </StackPanel>
+  <Border Grid.Row="2" Background="#E8EDF0" BorderBrush="{StaticResource Line}" BorderThickness="1" Padding="12" MinHeight="60">
+   <Grid><Image x:Name="GridPreview" Source="{Binding Preview}" Stretch="Uniform" AutomationProperties.Name="Предварительный вид фото по сетке"/>
+    <TextBlock Text="{Binding PreviewStatus}" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#ECFFFFFF" Padding="5,3" FontSize="11"/>
+   </Grid>
+  </Border>
+  <Grid Grid.Row="3" Margin="0,12,0,0"><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+   <TextBlock Text="{Binding Error}" Foreground="#AA392C" TextWrapping="Wrap" Margin="0,0,0,7"/>
+   <TextBlock Grid.Row="1" Text="{Binding PreviewError}" Foreground="#8A471C" TextWrapping="Wrap" Margin="0,0,0,7" Visibility="{Binding HasPreviewError,Converter={StaticResource Visible}}"/>
+   <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+    <Button x:Name="CancelGrid" IsCancel="True" MinWidth="100" Margin="0,0,12,0" AutomationProperties.Name="Отмена"><controls:IconLabel Icon="x" Text="Отмена"/></Button>
+    <Button x:Name="ApplyGrid" Click="ApplyClicked" IsDefault="True" IsEnabled="{Binding CanApply}" MinWidth="130" Style="{StaticResource PrimaryButton}" AutomationProperties.Name="Применить размещение фото по сетке"><controls:IconLabel Icon="layout-grid" Text="Разместить"/></Button>
+   </StackPanel>
+  </Grid>
+ </Grid>
+</Window>

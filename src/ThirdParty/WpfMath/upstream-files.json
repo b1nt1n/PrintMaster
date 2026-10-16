@@ -1,0 +1,170 @@
+[
+  {
+    "Path": "LICENSE.md",
+    "UpstreamPath": "LICENSE.md",
+    "Length": 1175,
+    "GitBlob": "ea395031d36c9afaf381cd79c8959253d89733ab",
+    "Sha256": "8B6C8A2BB9FE4E17BF771C95BE1A85485355319EBA16473FBDA9CB27CED5ABB5"
+  },
+  {
+    "Path": "Fonts/LICENSES.md",
+    "UpstreamPath": "fonts/LICENSES.md",
+    "Length": 5709,
+    "GitBlob": "d756fe6128c18e58419187ac389e9e5eef5ea360",
+    "Sha256": "32356DE73439E0823F3DB6D425360367AA31997ED4A5E3699E1360C87C97DCAE"
+  },
+  {
+    "Path": "Fonts/cmex10.ttf",
+    "UpstreamPath": "fonts/cmex10.ttf",
+    "Length": 15396,
+    "GitBlob": "23590b29e5c5d1e16e2524b3f9397cb8eb1e6cec",
+    "Sha256": "EF6380AD8E1E6AC638760AC5E9BF8B16C7363501AFF97B2C2CFC00E1351637C4"
+  },
+  {
+    "Path": "Fonts/cmmi10.ttf",
+    "UpstreamPath": "fonts/cmmi10.ttf",
+    "Length": 27120,
+    "GitBlob": "79b629ae10a5416fefdd98137365ba2724b169ed",
+    "Sha256": "2B84307DC8E4404A69BB0C9AD6B35E7AE51D241976DA8732BAE6AF4F382FAF1C"
+  },
+  {
+    "Path": "Fonts/cmr10.ttf",
+    "UpstreamPath": "fonts/cmr10.ttf",
+    "Length": 21804,
+    "GitBlob": "c23f88605f85960523de2927194e428628082b3c",
+    "Sha256": "0D81DAC50D023F52329F251CD809855E3BDE75AA0118D30ABAC55D6E7C327DE5"
+  },
+  {
+    "Path": "Fonts/cmsy10.ttf",
+    "UpstreamPath": "fonts/cmsy10.ttf",
+    "Length": 22132,
+    "GitBlob": "71a506ad5e1bdf2709662652b3a4a822da53d1fd",
+    "Sha256": "AE789B55BAAE9B84CED18DD1994045F98E3988A8AE6C9B76157068446B90BB1D"
+  },
+  {
+    "Path": "Fonts/jlm_msam10.ttf",
+    "UpstreamPath": "fonts/jlm_msam10.ttf",
+    "Length": 21868,
+    "GitBlob": "da55fe150502b63ef5c670ca1b3dfb76be938f42",
+    "Sha256": "42425DD49DB79D9667AF33AF34615ACF7F04489F3EAFE621E53AE14144F70422"
+  },
+  {
+    "Path": "Controls/FormulaControl.xaml",
+    "UpstreamPath": "src/WpfMath/Controls/FormulaControl.xaml",
+    "Length": 1493,
+    "GitBlob": "b0f7f9bca8324e0148981b6e1715f0184d33f0f0",
+    "Sha256": "14DFF3B318042C7B221B4EA2910396D58D89017EF56759C97DAB339B28706A4A"
+  },
+  {
+    "Path": "Controls/FormulaControl.xaml.cs",
+    "UpstreamPath": "src/WpfMath/Controls/FormulaControl.xaml.cs",
+    "Length": 8740,
+    "GitBlob": "d2f660e69c015817fa00f53e21a477a6580f6149",
+    "Sha256": "4D9255C2CB6003B493F13DA074FDA0A5124B55CB0CAA3B36923DD53E89B00E3B"
+  },
+  {
+    "Path": "Controls/VisualContainerElement.cs",
+    "UpstreamPath": "src/WpfMath/Controls/VisualContainerElement.cs",
+    "Length": 1537,
+    "GitBlob": "39bf3236b5c8a46b8297a2292c176fffc84b7d8a",
+    "Sha256": "B18B8A1B29AFB27D11000ACFC602B6FC8B71A813F6C1A99D6E780179FF34A06E"
+  },
+  {
+    "Path": "Converters/SVGConverter.cs",
+    "UpstreamPath": "src/WpfMath/Converters/SVGConverter.cs",
+    "Length": 8223,
+    "GitBlob": "57abbb89e80a6f0e51e2ef2fb2efdbc6108bd10c",
+    "Sha256": "57C80DF983C7B4A25A97F6A6968F17AA7681AF4097B0E2F0A8F29BCCE13CAD42"
+  },
+  {
+    "Path": "Extensions.cs",
+    "UpstreamPath": "src/WpfMath/Extensions.cs",
+    "Length": 823,
+    "GitBlob": "982138f575250599a65a5ed8bab17f1ea8c9d753",
+    "Sha256": "A5B766B90540F63F8646FDCE101CAD8FBEC44CFD4B15BB1B6C9894A6C1AE707C"
+  },
+  {
+    "Path": "Fonts/WpfCharInfoEx.cs",
+    "UpstreamPath": "src/WpfMath/Fonts/WpfCharInfoEx.cs",
+    "Length": 1303,
+    "GitBlob": "9c46d7536523627400d44141427222a4e42d7d2f",
+    "Sha256": "637E621B1C3D7AF440BC47C7213A910AC8ADEB58EDD091C792B35B2F53EBF861"
+  },
+  {
+    "Path": "Fonts/WpfGlyphTypeface.cs",
+    "UpstreamPath": "src/WpfMath/Fonts/WpfGlyphTypeface.cs",
+    "Length": 151,
+    "GitBlob": "04b5019bf151e18c101a54d75a7ac3e5bf6e36e7",
+    "Sha256": "504453A94F90915FD4AC1F4D4C50DD1BAE67B503BC7BA54A9D1D54AD25D35770"
+  },
+  {
+    "Path": "Fonts/WpfMathFontProvider.cs",
+    "UpstreamPath": "src/WpfMath/Fonts/WpfMathFontProvider.cs",
+    "Length": 1201,
+    "GitBlob": "669b8a64f5d5224eed147ac19aed77d3bd1598ef",
+    "Sha256": "B63F1E13E4F607ED769987CE32A96B3FB1BC6E024A71405681478607F267BC57"
+  },
+  {
+    "Path": "Fonts/WpfSystemFont.cs",
+    "UpstreamPath": "src/WpfMath/Fonts/WpfSystemFont.cs",
+    "Length": 5515,
+    "GitBlob": "09811bbbb46d04ba5e515521673a08f7ab48c1eb",
+    "Sha256": "724D27C823101FF8ACFE14C297128546607DC20C775D252AA45D180347932CF4"
+  },
+  {
+    "Path": "Parsers/WpfTeXFormulaParser.cs",
+    "UpstreamPath": "src/WpfMath/Parsers/WpfTeXFormulaParser.cs",
+    "Length": 802,
+    "GitBlob": "253d8a2ae98e13a54a1592d243b3d598d4b5c386",
+    "Sha256": "1CA7ABE89D5FFEEF2320B22A7DDFA520BE2C875ACCB808DC9B6173D6D13D4C9E"
+  },
+  {
+    "Path": "Rendering/GeometryElementRenderer.cs",
+    "UpstreamPath": "src/WpfMath/Rendering/GeometryElementRenderer.cs",
+    "Length": 3166,
+    "GitBlob": "3cdd50f079e4840e9895674d185d54b0e725b834",
+    "Sha256": "80D21510BDBFAC4E9EAA9CD455FCBF7F344AF3AAE165151FAB75964B67B02A26"
+  },
+  {
+    "Path": "Rendering/WpfBrush.cs",
+    "UpstreamPath": "src/WpfMath/Rendering/WpfBrush.cs",
+    "Length": 584,
+    "GitBlob": "8c56e7c472a95903ccdb8e56c410fbd90b194e75",
+    "Sha256": "E63F78E03BCDA8AD43D53290F9B4B89B707E3D67045AF81697B1D4865AEAF76F"
+  },
+  {
+    "Path": "Rendering/WpfElementRenderer.cs",
+    "UpstreamPath": "src/WpfMath/Rendering/WpfElementRenderer.cs",
+    "Length": 4991,
+    "GitBlob": "77f4de3c83c018dd4d138ea75e22dd11216a8e8d",
+    "Sha256": "C4E976AFD5B64BF1D5532BB97D3134A0ED61B3C5FFBEDFC70FA4D3A317AD27BC"
+  },
+  {
+    "Path": "Rendering/WpfExtensions.cs",
+    "UpstreamPath": "src/WpfMath/Rendering/WpfExtensions.cs",
+    "Length": 562,
+    "GitBlob": "8695017799eb4f14f7d0d0493b8ef651deb54cf4",
+    "Sha256": "ACDA571C4F6A2A049DB1D1D7525518C809CCF67CCD79D6EA7077B4FA977EE035"
+  },
+  {
+    "Path": "Rendering/WpfRectangleExtensions.cs",
+    "UpstreamPath": "src/WpfMath/Rendering/WpfRectangleExtensions.cs",
+    "Length": 260,
+    "GitBlob": "498da870a9ce97e42a7e41edb8035b2be5a77c39",
+    "Sha256": "FD38AA723B8DAD64A6BF0BEDC39F270968BCAD5FC0DCC3F969C0F97E6DF34F58"
+  },
+  {
+    "Path": "Rendering/WpfTeXEnvironment.cs",
+    "UpstreamPath": "src/WpfMath/Rendering/WpfTeXEnvironment.cs",
+    "Length": 1518,
+    "GitBlob": "65405981a0bd72f375cd6ee840699b689dbafb68",
+    "Sha256": "E9F4973AA287DDBA40B8B1D256C7EBD0D4A4985DA60B47AD0DD735C54F46A32A"
+  },
+  {
+    "Path": "Rendering/WpfTeXFormulaExtensions.cs",
+    "UpstreamPath": "src/WpfMath/Rendering/WpfTeXFormulaExtensions.cs",
+    "Length": 3596,
+    "GitBlob": "8ff720fab87f8b726be4c874ee07daa1868a8b67",
+    "Sha256": "E0702405E3E0B0723BE0E45649CF1219BC5D5EA963031D94C6DE784D00EE392B"
+  }
+]

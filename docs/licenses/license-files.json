@@ -1,0 +1,121 @@
+[
+  {
+    "Package": "CommunityToolkit.Mvvm",
+    "Version": "8.4.0",
+    "Path": "CommunityToolkit.Mvvm-8.4.0/License.md",
+    "SHA256": "651997ef19dbb9ecb8dd660dbc86444a65af21f18cfe08daa69bf201cd5cfdfc",
+    "Source": "https://api.nuget.org/v3-flatcontainer/communitytoolkit.mvvm/8.4.0/communitytoolkit.mvvm.8.4.0.nupkg"
+  },
+  {
+    "Package": "CommunityToolkit.Mvvm",
+    "Version": "8.4.0",
+    "Path": "CommunityToolkit.Mvvm-8.4.0/ThirdPartyNotices.txt",
+    "SHA256": "7774f8b0ab66bfb47ec154ce24a2d6d574febc44a74d940b8a037d1c56756163",
+    "Source": "https://api.nuget.org/v3-flatcontainer/communitytoolkit.mvvm/8.4.0/communitytoolkit.mvvm.8.4.0.nupkg"
+  },
+  {
+    "Package": "Microsoft.NETCore.App.Runtime.win-x64",
+    "Version": "8.0.26",
+    "Path": "Microsoft.NETCore.App.Runtime.win-x64-8.0.26/LICENSE.TXT",
+    "SHA256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+    "Source": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.win-x64/8.0.26/microsoft.netcore.app.runtime.win-x64.8.0.26.nupkg"
+  },
+  {
+    "Package": "Microsoft.NETCore.App.Runtime.win-x64",
+    "Version": "8.0.26",
+    "Path": "Microsoft.NETCore.App.Runtime.win-x64-8.0.26/THIRD-PARTY-NOTICES.TXT",
+    "SHA256": "b60b2912da28eaa6518593c9e2efb5334ee062d3c42e80d8fdfa806b3dc52977",
+    "Source": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.win-x64/8.0.26/microsoft.netcore.app.runtime.win-x64.8.0.26.nupkg"
+  },
+  {
+    "Package": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+    "Version": "8.0.26",
+    "Path": "Microsoft.WindowsDesktop.App.Runtime.win-x64-8.0.26/LICENSE",
+    "SHA256": "a89886665765362eb77e0f8e26602c924520041d1711b2eedc136434fe4d01ab",
+    "Source": "https://api.nuget.org/v3-flatcontainer/microsoft.windowsdesktop.app.runtime.win-x64/8.0.26/microsoft.windowsdesktop.app.runtime.win-x64.8.0.26.nupkg"
+  },
+  {
+    "Package": "System.Drawing.Common",
+    "Version": "8.0.26",
+    "Path": "System.Drawing.Common-8.0.26/LICENSE.TXT",
+    "SHA256": "a89886665765362eb77e0f8e26602c924520041d1711b2eedc136434fe4d01ab",
+    "Source": "https://api.nuget.org/v3-flatcontainer/system.drawing.common/8.0.26/system.drawing.common.8.0.26.nupkg"
+  },
+  {
+    "Package": "System.Drawing.Common",
+    "Version": "8.0.26",
+    "Path": "System.Drawing.Common-8.0.26/THIRD-PARTY-NOTICES.TXT",
+    "SHA256": "093e2589a27ed137e519b9856e425efa7982221a7b3d9e7cea3b5153f711905e",
+    "Source": "https://api.nuget.org/v3-flatcontainer/system.drawing.common/8.0.26/system.drawing.common.8.0.26.nupkg"
+  },
+  {
+    "Package": "Microsoft.Extensions.Logging.Abstractions",
+    "Version": "8.0.3",
+    "Path": "Microsoft.Extensions.Logging.Abstractions-8.0.3/LICENSE.TXT",
+    "SHA256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+    "Source": "https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/8.0.3/microsoft.extensions.logging.abstractions.8.0.3.nupkg"
+  },
+  {
+    "Package": "Microsoft.Extensions.Logging.Abstractions",
+    "Version": "8.0.3",
+    "Path": "Microsoft.Extensions.Logging.Abstractions-8.0.3/THIRD-PARTY-NOTICES.TXT",
+    "SHA256": "b60b2912da28eaa6518593c9e2efb5334ee062d3c42e80d8fdfa806b3dc52977",
+    "Source": "https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/8.0.3/microsoft.extensions.logging.abstractions.8.0.3.nupkg"
+  },
+  {
+    "Package": "Microsoft.Extensions.DependencyInjection.Abstractions",
+    "Version": "8.0.2",
+    "Path": "Microsoft.Extensions.DependencyInjection.Abstractions-8.0.2/LICENSE.TXT",
+    "SHA256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+    "Source": "https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg"
+  },
+  {
+    "Package": "Microsoft.Extensions.DependencyInjection.Abstractions",
+    "Version": "8.0.2",
+    "Path": "Microsoft.Extensions.DependencyInjection.Abstractions-8.0.2/THIRD-PARTY-NOTICES.TXT",
+    "SHA256": "b60b2912da28eaa6518593c9e2efb5334ee062d3c42e80d8fdfa806b3dc52977",
+    "Source": "https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg"
+  },
+  {
+    "Package": "System.Security.Cryptography.Pkcs",
+    "Version": "8.0.1",
+    "Path": "System.Security.Cryptography.Pkcs-8.0.1/LICENSE.TXT",
+    "SHA256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+    "Source": "https://api.nuget.org/v3-flatcontainer/system.security.cryptography.pkcs/8.0.1/system.security.cryptography.pkcs.8.0.1.nupkg"
+  },
+  {
+    "Package": "System.Security.Cryptography.Pkcs",
+    "Version": "8.0.1",
+    "Path": "System.Security.Cryptography.Pkcs-8.0.1/THIRD-PARTY-NOTICES.TXT",
+    "SHA256": "b60b2912da28eaa6518593c9e2efb5334ee062d3c42e80d8fdfa806b3dc52977",
+    "Source": "https://api.nuget.org/v3-flatcontainer/system.security.cryptography.pkcs/8.0.1/system.security.cryptography.pkcs.8.0.1.nupkg"
+  },
+  {
+    "Package": "Microsoft.Win32.SystemEvents",
+    "Version": "8.0.0",
+    "Path": "Microsoft.Win32.SystemEvents-8.0.0/LICENSE.TXT",
+    "SHA256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+    "Source": "https://api.nuget.org/v3-flatcontainer/microsoft.win32.systemevents/8.0.0/microsoft.win32.systemevents.8.0.0.nupkg"
+  },
+  {
+    "Package": "Microsoft.Win32.SystemEvents",
+    "Version": "8.0.0",
+    "Path": "Microsoft.Win32.SystemEvents-8.0.0/THIRD-PARTY-NOTICES.TXT",
+    "SHA256": "19c19dcac9f3ee6302cfbc6745bb8e79f08efc4c933eb8dc5509bf14b88347ec",
+    "Source": "https://api.nuget.org/v3-flatcontainer/microsoft.win32.systemevents/8.0.0/microsoft.win32.systemevents.8.0.0.nupkg"
+  },
+  {
+    "Package": "PDFiumCore",
+    "Version": "155.0.8057",
+    "Path": "PDFiumCore-155.0.8057/LICENSE",
+    "SHA256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "Source": "https://raw.githubusercontent.com/Dtronix/PDFiumCore/2d3d545889888a1c1bace599210446cd62038709/LICENSE"
+  },
+  {
+    "Package": "bblanchon.PDFium.Win32",
+    "Version": "155.0.8057",
+    "Path": "bblanchon.PDFium.Win32-155.0.8057/LICENSE-APACHE-2.0.txt",
+    "SHA256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "Source": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+  }
+]

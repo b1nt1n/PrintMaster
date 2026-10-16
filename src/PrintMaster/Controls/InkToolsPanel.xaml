@@ -1,0 +1,23 @@
+<UserControl x:Class="PrintMaster.Controls.InkToolsPanel"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:local="clr-namespace:PrintMaster.Controls" Visibility="{Binding ShowInkToolSettings,Converter={StaticResource Visible}}">
+ <StackPanel Visibility="{Binding ShowInkToolSettings,Converter={StaticResource Visible}}" IsEnabled="{Binding CanEdit}" Margin="0,0,0,10">
+  <TextBlock Text="{Binding InkToolTitle}" FontWeight="SemiBold" Margin="0,0,0,6"/>
+  <local:TextColorEditor Color="{Binding InkColor,Mode=TwoWay}" CanPickColor="{Binding CanPickProjectColor}" ColorLabel="Цвет нового штриха"
+   Visibility="{Binding ShowInkPaintSettings,Converter={StaticResource Visible}}"/>
+  <StackPanel Visibility="{Binding ShowInkSizeSettings,Converter={StaticResource Visible}}">
+   <TextBlock Text="Диаметр" Style="{StaticResource Hint}" Margin="0,10,0,5"/>
+   <local:NumericField x:Name="InkSizeInput" Text="{Binding InkToolSize,Mode=TwoWay,Converter={StaticResource NumericValue},UpdateSourceTrigger=Explicit,ValidatesOnExceptions=True}"
+    Minimum="{Binding InkToolSizeMinimum}" MinimumExclusive="True" Maximum="{Binding InkToolSizeMaximum}" Unit="{Binding InkToolSizeUnit}"
+    ContextKey="{Binding InkToolContextKey}" AutomationProperties.Name="{Binding InkToolSizeAutomationName}" AutomationProperties.HelpText="Enter — применить, Esc — вернуть. Размер кисти и маркера запоминается отдельно."/>
+  </StackPanel>
+  <StackPanel Visibility="{Binding ShowInkPaintSettings,Converter={StaticResource Visible}}">
+   <TextBlock Text="Непрозрачность" Style="{StaticResource Hint}" Margin="0,10,0,5"/>
+   <local:NumericField x:Name="InkOpacityInput" Text="{Binding InkOpacityPercent,Mode=TwoWay,Converter={StaticResource NumericValue},UpdateSourceTrigger=Explicit,ValidatesOnExceptions=True}"
+    Minimum="0" Maximum="100" Unit="%" ContextKey="{Binding InkToolContextKey}" AutomationProperties.Name="Непрозрачность нового штриха"
+    AutomationProperties.HelpText="От 0 до 100 процентов. Enter — применить, Esc — вернуть. Параметр относится к новым штрихам."/>
+   <TextBlock Text="0 % — штрих невидим." Style="{StaticResource Hint}" Margin="0,5,0,0" Visibility="{Binding IsInvisibleInk,Converter={StaticResource Visible}}"/>
+  </StackPanel>
+  <TextBlock Text="{Binding InkToolHint}" Style="{StaticResource Hint}" Margin="0,8,0,0"/>
+ </StackPanel>
+</UserControl>

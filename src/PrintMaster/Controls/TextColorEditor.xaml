@@ -1,0 +1,18 @@
+<UserControl x:Class="PrintMaster.Controls.TextColorEditor"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:local="clr-namespace:PrintMaster.Controls">
+ <StackPanel AutomationProperties.Name="{Binding ColorLabel,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
+  <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="48"/><ColumnDefinition Width="8"/><ColumnDefinition/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+   <Button x:Name="PaletteButton" Click="OpenPalette" Padding="5" AutomationProperties.Name="Открыть полную палитру" ToolTip="Полная палитра: спектр, яркость и RGB">
+    <Grid><Border x:Name="Swatch" Width="27" Height="22" CornerRadius="3" BorderBrush="{StaticResource Line}" BorderThickness="1"/><local:LucideIcon x:Name="PaletteGlyph" Icon="palette" Width="17" Height="17" Foreground="White"/></Grid>
+   </Button>
+   <TextBox x:Name="HexInput" Grid.Column="2" AutomationProperties.Name="Цвет RRGGBB"
+    ToolTip="Шесть шестнадцатеричных знаков: RRGGBB или #RRGGBB. Enter — применить, Esc — вернуть."
+    AutomationProperties.HelpText="Шесть шестнадцатеричных знаков RRGGBB. Решетка перед цветом необязательна."
+    LostKeyboardFocus="ApplyHex" PreviewKeyDown="HexKeyDown"/>
+   <Button x:Name="PipetteButton" Grid.Column="3" Width="34" MinWidth="34" Padding="6" Margin="5,0,0,0" Click="RequestColorPick" Visibility="{Binding CanPickColor,RelativeSource={RelativeSource AncestorType={x:Type local:TextColorEditor}},Converter={StaticResource Visible}}" AutomationProperties.Name="Взять цвет с холста" ToolTip="Пипетка: нажмите и выберите цвет на холсте. Esc — отмена."><local:LucideIcon Icon="pipette"/></Button>
+  </Grid>
+  <TextBlock Text="{Binding ColorLabel,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Foreground="{StaticResource Muted}" FontSize="12" Margin="0,4,0,0"/>
+  <TextBlock x:Name="ValidationMessage" Foreground="#AA392C" FontSize="12" TextWrapping="Wrap" Visibility="Collapsed" Margin="0,5,0,0"/>
+ </StackPanel>
+</UserControl>

@@ -1,0 +1,47 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintMaster", "src\PrintMaster\PrintMaster.csproj", "{9808F7A5-7895-46BD-B895-4F501B1210D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintMaster.Tests", "tests\PrintMaster.Tests\PrintMaster.Tests.csproj", "{BBA22AF5-B896-4716-995B-4C5ED8EB9E77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8FA01E33-BEAC-4F42-8583-A1893CE135D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThirdParty", "ThirdParty", "{717584A3-F7C3-4BFE-BAEF-A901CDB2A613}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMath", "src\ThirdParty\WpfMath\WpfMath.csproj", "{4E832BC4-2C26-49F2-ACBF-8E4C6FADED5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F7F329B1-77E3-4112-8ECA-0E0C5F503109}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintMaster.FontLifecycle", "tests\PrintMaster.FontLifecycle\PrintMaster.FontLifecycle.csproj", "{30718DC7-AD71-492B-A3D8-2338C296C729}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9808F7A5-7895-46BD-B895-4F501B1210D1}.Debug|x64.ActiveCfg = Debug|x64
+		{9808F7A5-7895-46BD-B895-4F501B1210D1}.Debug|x64.Build.0 = Debug|x64
+		{9808F7A5-7895-46BD-B895-4F501B1210D1}.Release|x64.ActiveCfg = Release|x64
+		{9808F7A5-7895-46BD-B895-4F501B1210D1}.Release|x64.Build.0 = Release|x64
+		{BBA22AF5-B896-4716-995B-4C5ED8EB9E77}.Debug|x64.ActiveCfg = Debug|x64
+		{BBA22AF5-B896-4716-995B-4C5ED8EB9E77}.Debug|x64.Build.0 = Debug|x64
+		{BBA22AF5-B896-4716-995B-4C5ED8EB9E77}.Release|x64.ActiveCfg = Release|x64
+		{BBA22AF5-B896-4716-995B-4C5ED8EB9E77}.Release|x64.Build.0 = Release|x64
+		{4E832BC4-2C26-49F2-ACBF-8E4C6FADED5B}.Debug|x64.ActiveCfg = Debug|x64
+		{4E832BC4-2C26-49F2-ACBF-8E4C6FADED5B}.Debug|x64.Build.0 = Debug|x64
+		{4E832BC4-2C26-49F2-ACBF-8E4C6FADED5B}.Release|x64.ActiveCfg = Release|x64
+		{4E832BC4-2C26-49F2-ACBF-8E4C6FADED5B}.Release|x64.Build.0 = Release|x64
+		{30718DC7-AD71-492B-A3D8-2338C296C729}.Debug|x64.ActiveCfg = Debug|x64
+		{30718DC7-AD71-492B-A3D8-2338C296C729}.Debug|x64.Build.0 = Debug|x64
+		{30718DC7-AD71-492B-A3D8-2338C296C729}.Release|x64.ActiveCfg = Release|x64
+		{30718DC7-AD71-492B-A3D8-2338C296C729}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{717584A3-F7C3-4BFE-BAEF-A901CDB2A613} = {8FA01E33-BEAC-4F42-8583-A1893CE135D7}
+		{4E832BC4-2C26-49F2-ACBF-8E4C6FADED5B} = {717584A3-F7C3-4BFE-BAEF-A901CDB2A613}
+		{30718DC7-AD71-492B-A3D8-2338C296C729} = {F7F329B1-77E3-4112-8ECA-0E0C5F503109}
+	EndGlobalSection
+EndGlobal
